@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/score" method="post">
+
+            WORD 1<br>
+            <input name="string1" type="text">
+            <br><br>
+
+            WORD 2<br>
+            <input name="string2" type="text">
+            <br><br>
+
+            <br>
+            <button type="submit">SUBMIT</button>
+            <br><br>
+
+        </form>
+
+    </div>
+{% endblock %}

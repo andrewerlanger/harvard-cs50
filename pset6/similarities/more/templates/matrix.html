@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="col">
+
+<table>
+
+    <thead>
+        <tr>
+            <th>&nbsp&nbsp&nbsp&nbsp</th>
+            <th>&nbsp&nbsp&nbsp0</th>
+            {% for a in s1 %}
+            <th>&nbsp&nbsp&nbsp{{a}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th>&nbsp&nbsp&nbsp0</th>
+            {% for b in range((s1)|length + 1) %}
+            <td>&nbsp&nbsp&nbsp{{matrix[b][0][0]}}</td>
+            {% endfor %}
+        </tr>
+
+        {% for c in range((s2)|length) %}
+        <tr>
+            <th>&nbsp&nbsp&nbsp{{s2[c]}}</th>
+            {% for d in range((s1)|length + 1) %}
+            <td>&nbsp&nbsp&nbsp{{matrix[d][c+1][0]}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+
+{% endblock %}
