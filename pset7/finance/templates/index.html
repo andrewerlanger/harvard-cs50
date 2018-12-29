@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1>Index</h1>
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{ grand_total }}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for item in all_index_info %}
+            <tr>
+                <td>{{ item["symbol"] }}</td>
+                <td>{{ item["name"] }}</td>
+                <td>{{ item["shares"] }}</td>
+                <td>{{ item["price"] }}</td>
+                <td>{{ item["total_value"] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
